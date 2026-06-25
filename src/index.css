@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — "Soap Clean" expedition luxury system
+   Paper / Ink / Steppe / Earth, two-role type system, and a
+   fluid (Utopia-method) type scale so headings stay sculpted
+   from a 320px phone to a 1440px desktop without breakpoints.
+   ============================================================ */
+@theme {
+  /* ---- Color: named, not generic Tailwind grays ---- */
+  --color-paper: #f7f4ec; /* bone / off-white field */
+  --color-paper-dim: #efe9da; /* recessed panels, input rules */
+  --color-ink: #1c1b19; /* near-black, warm charcoal text */
+  --color-steppe: #3f4a3d; /* dark muted olive — primary accent */
+  --color-steppe-light: #6b7860; /* hover / active accent */
+  --color-earth: #6b6259; /* warm graphite — secondary text */
+  --color-line: #dcd5c5; /* hairline dividers on paper */
+  --color-ink-line: rgba(247, 244, 236, 0.16); /* hairlines on dark */
+
+  /* ---- Type families ---- */
+  --font-serif: "Noto Serif Display", "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-utility: "Manrope", "Inter", system-ui, sans-serif;
+
+  /* ---- Fluid type scale, 320px → 1440px viewport ---- */
+  --font-size-display: clamp(2.75rem, 1.4rem + 6.8vw, 7.5rem);
+  --font-size-display--line-height: 0.98;
+  --font-size-h1: clamp(2rem, 1.43rem + 2.86vw, 4rem);
+  --font-size-h1--line-height: 1.04;
+  --font-size-h2: clamp(1.625rem, 1.375rem + 1.25vw, 2.5rem);
+  --font-size-h2--line-height: 1.12;
+  --font-size-lede: clamp(1.0625rem, 1.03rem + 0.18vw, 1.1875rem);
+  --font-size-lede--line-height: 1.55;
+  --font-size-micro: clamp(0.9375rem, 0.92rem + 0.09vw, 1rem);
+  --font-size-micro--line-height: 1.4;
+
+  --ease-expedition: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+  html {
+    scroll-behavior: auto; /* Lenis owns smooth scroll */
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  ::selection {
+    background: var(--color-steppe);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-steppe);
+    outline-offset: 3px;
+  }
+
+  /* Hide the native cursor only when our custom one is active (desktop, fine pointer) */
+  @media (hover: hover) and (pointer: fine) {
+    body.has-custom-cursor,
+    body.has-custom-cursor * {
+      cursor: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Topographic contour rule — used sparingly as a section divider,
+     a quiet nod to expedition route maps rather than a literal map image. */
+  .contour-divider {
+    height: 56px;
+    width: 100%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='56' viewBox='0 0 400 56'><path d='M0 28 C 40 8, 80 48, 120 28 S 200 8, 240 28 S 320 48, 360 28 S 400 8, 400 28' fill='none' stroke='%233F4A3D' stroke-opacity='0.35' stroke-width='1'/></svg>");
+    background-repeat: repeat-x;
+    background-size: 400px 56px;
+  }
+
+  .rule {
+    border-bottom: 1px solid var(--color-line);
+  }
+}
