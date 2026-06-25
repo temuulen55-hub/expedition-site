@@ -8,6 +8,9 @@ import Expeditions from "./pages/Expeditions.jsx";
 import Itinerary from "./pages/Itinerary.jsx";
 import Journal from "./pages/Journal.jsx";
 import Booking from "./pages/Booking.jsx";
+import About from "./pages/About.jsx";
+import Guide from "./pages/Guide.jsx";
+import Contact from "./pages/Contact.jsx";
 
 export default function App() {
   return (
@@ -16,6 +19,9 @@ export default function App() {
         <Nav />
         <main className="pt-[88px]">
           <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/guide" element={<Guide />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/" element={<Home />} />
             <Route path="/expeditions" element={<Expeditions />} />
             <Route path="/expeditions/:slug" element={<Itinerary />} />

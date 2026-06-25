@@ -285,6 +285,22 @@ export default function Home() {
           </p>
         </Reveal>
       </section>
+      {/* ─── SUBTLE CREDIT ─── */}
+      <section className="bg-paper py-8 text-center">
+        <p className="font-utility text-[10px] font-semibold uppercase tracking-[0.14em] text-earth/40">
+          {lang === "en"
+            ? "This website is made by "
+            : "Энэхүү вебсайтыг бүтээсэн: "}
+          <a
+            href="https://temuulenenkhbold.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-earth/70 transition-colors hover:text-steppe"
+          >
+            Temuulen Enkhbold
+          </a>
+        </p>
+      </section>
     </div>
   );
 }

@@ -5,9 +5,10 @@ import { useLang } from "../LanguageContext.jsx";
 
 const LINKS = [
   { to: "/", en: "Home", mn: "Нүүр" },
+  { to: "/about", en: "About", mn: "Бидний тухай" },
   { to: "/expeditions", en: "Expeditions", mn: "Аялалууд" },
-  { to: "/journal", en: "Journal", mn: "Тэмдэглэл" },
-  { to: "/booking", en: "Inquire", mn: "Захиалга" },
+  { to: "/guide", en: "Guide", mn: "Гарын авлага" },
+  { to: "/contact", en: "Contact", mn: "Холбоо барих" },
 ];
 
 export default function Nav() {
