@@ -187,7 +187,7 @@ const SECTIONS = [
 ];
 
 const TEXT = {
-  eyebrow: { en: "Khairkhan Expeditions", mn: "Хайрхан Экспедишн" },
+  eyebrow: { en: "Temuulen Expeditions", mn: "Темүүлэн Экспедишн" },
   title: { en: "Essential Field Guide", mn: "Аяллын гарын авлага" },
   sub: {
     en: "Everything we wish someone had told us before our first time in the field.",
